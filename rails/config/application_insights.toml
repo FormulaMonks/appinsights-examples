@@ -1,0 +1,22 @@
+[ai]
+  instrumentation_key = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+
+# Contracts configuration
+
+  [ai.application]
+    ver = '0.2.0'
+# Enable/Disable Middlewares
+
+[[middleware]]
+  name = 'AppInsights::ExceptionHandling'
+  enabled = true
+
+[[middleware]]
+  name = 'ApplicationInsights::Rack::TrackRequest'
+  enabled = true
+
+  [middleware.initialize]
+    instrumentation_key = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+    buffer_size = 500
+    send_interval = 60
+
